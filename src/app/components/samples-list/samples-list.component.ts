@@ -42,16 +42,7 @@ export class SamplesListComponent implements OnInit {
     this.currentIndex = index;
   }
 
-  removeAllSamples(): void {
-    this.sampleService.deleteAll()
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-          this.refreshList();
-        },
-        error: (e) => console.error(e)
-      });
-  }
+ 
 
   searchPostId(): void {
     this.currentSample = {};
