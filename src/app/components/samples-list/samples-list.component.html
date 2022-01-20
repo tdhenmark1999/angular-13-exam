@@ -1,0 +1,51 @@
+<div class="list row">
+  <div class="col-md-12 mt-4">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control roboto-400"
+        placeholder="Search by post Id"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary oswald-400 text-decoration" style="margin-left: 10px;"
+          type="button"
+          (click)="searchPostId()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    
+    <app-sample-details
+      [viewMode]="true"
+      [currentSample]="currentSample"
+    ></app-sample-details>
+  </div>
+  <div class="col-md-12">
+    <h4 class="oswald-700 mb-3 mt-3 text-uppercase">List of Data</h4>
+ 
+    <table class="table">
+      <thead>
+        <th class="oswald-700 text-uppercase">ID</th>
+        <th class="oswald-700 text-uppercase">Title</th>
+        <th class="oswald-700 text-uppercase">Post ID</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sample of samples; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveSample(sample, i)">
+          <th class="roboto-700">{{ sample.id }}</th>
+          <th class="roboto-400"> {{ sample.title == null ? sample.name : sample.title}}</th>
+          <th class="roboto-400">{{ sample.userId  == null ? sample.postId : sample.userId}}</th>
+        </tr>
+      </tbody>
+    </table>
+
+   
+  </div>
+  
+</div>

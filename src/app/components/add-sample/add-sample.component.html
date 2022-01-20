@@ -1,0 +1,35 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label  class="oswald-700 text-uppercase mb-1" for="title">Title</label>
+        <input
+          type="text"
+          class="form-control  roboto-400"
+          id="title"
+          required
+          [(ngModel)]="sample.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label  class="oswald-700 text-uppercase mb-1 mt-3" for="description">Description</label>
+        <input
+          class="form-control roboto-400"
+          id="description"
+          required
+          [(ngModel)]="sample.description"
+          name="description"
+        />
+      </div>
+
+      <button (click)="saveSample()" class="btn btn-success mt-3 oswald-400 text-uppercase">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4 class="oswald-400">Sample was submitted successfully!</h4>
+      <button class="btn btn-success oswald-400 text-uppercase" (click)="newSample()">Add</button>
+    </div>
+  </div>
+</div>
