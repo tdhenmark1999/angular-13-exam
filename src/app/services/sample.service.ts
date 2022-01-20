@@ -33,10 +33,6 @@ export class SampleService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
-  }
-
   findByPostId(postId: any): Observable<Sample[]> {
     return this.http.get<Sample[]>(`${baseUrlSearch}?postId=${postId}`);
   }
